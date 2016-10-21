@@ -16,5 +16,6 @@
    - card를 소모하였을 경우, HTTP reload 함
 
  - 기타 
-   - http 통신의 경우, volley stringrequest 사용함
-   - glide image loader 사용함
+   - http 통신의 경우, volley lib (stringrequest) 사용함
+   - glide image loader lib 사용함
+   - JSON parser, json lib 사용함
