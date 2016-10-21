@@ -114,18 +114,17 @@ public class MainActivity extends AppCompatActivity {
                 mLoadingLayout.setVisibility(View.VISIBLE);
 
                 if (mIsLastItem) { // last page
-                    ((TextView)findViewById(R.id.txt_loading)).setText(mIsLastItem ? "No card, Sorry" : "Searching fruit cards...");
+                    ((TextView)findViewById(R.id.txt_loading)).setText("No card, Sorry");
                     (findViewById(R.id.progress_loading)).setVisibility(View.GONE);
 
                 } else {
-                    ((TextView)findViewById(R.id.txt_loading)).setText(mIsLastItem ? "No card, Sorry" : "Searching fruit cards...");
+                    ((TextView)findViewById(R.id.txt_loading)).setText("Searching fruit cards...");
                     (findViewById(R.id.progress_loading)).setVisibility(View.VISIBLE);
 
                     //if sending all card, must get more card by http protocol
                     String url = "http://leejangyoun.com/android/dummy/SlideCardView_" + (++mPage) + ".json";
                     StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new CustomSuccessListener(), new CustomErrorListener());
                     mQueue.add(stringRequest);
-
                 }
             }
         }
